@@ -1,0 +1,58 @@
+<div class="d-flex align-items-center justify-content-center pt-5">
+  <div class="card bg-transparent border rounded-3">
+    <div class="card-header bg-transparent border-bottom" [ngClass]="{'dark-theme': isDarkThemeOn, 'light-theme': !isDarkThemeOn}">
+      <h3 class="card-header-title mb-0">{{driverid?('editdriver'|translate):('newdriver'|translate)}}</h3>
+    </div>
+
+    <div class="card-body" [ngClass]="{'dark-theme': isDarkThemeOn, 'light-theme': !isDarkThemeOn}">
+      <form class="row g-4" [formGroup]="driverForm">
+
+        <div class="col-12">
+          <label class="form-label">{{'usercard.fn'|translate}}</label>
+          <div class="input-group">
+            <input type="text" class="form-control"  placeholder="{{'usercard.fn'|translate}}" formControlName="name" [(ngModel)]="driver.name">
+          </div>
+        </div>
+
+        <div class="col-md-6">
+          <label class="form-label">{{'pass'|translate}}</label>
+          <div class="input-group">
+            <input type="text" class="form-control" formControlName="password"[(ngModel)]="driver.password">
+          </div>
+        </div>
+
+        <div class="col-md-6">
+          <label class="form-label">Email</label>
+          <input class="form-control" type="email"   placeholder="Email" formControlName="email"[(ngModel)]="driver.email">
+        </div>
+
+        <div class="col-md-6">
+          <label class="form-label">{{'usercard.mn'|translate}}</label>
+          <input type="text" class="form-control"  placeholder="{{'usercard.mn'|translate}}" formControlName="phone"[(ngModel)]="driver.phone">
+        </div>
+
+        <div class="col-md-6">
+          <label class="form-label">{{'usercard.year'|translate}}</label>
+          <input class="form-control" type="text" formControlName="year"[(ngModel)]="driver.year">
+        </div>
+        <div class="col-md-6">
+          <label class="form-label">Color</label>
+          <input class="form-control" type="text" formControlName="color"[(ngModel)]="driver.color">
+        </div>
+        <div class="col-md-6">
+          <label class="form-label">{{'usercard.model'|translate}}</label>
+          <input class="form-control" type="text" formControlName="model" [(ngModel)]="driver.model">
+        </div>
+        <div class="col-md-6">
+          <label class="form-label">
+            <input type="checkbox" name="PayWeekly" formControlName="payWeekly"[(ngModel)]="driver.payWeekly">{{'payw'|translate}}
+          </label>
+        </div>
+
+        <div class="d-sm-flex justify-content-end">
+          <button type="button" class="btn btn-primary mb-0" (click)="saveDriver()">{{driverid?('save'|translate):('create'|translate)}}</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

@@ -1,11 +1,18 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-</head>
-<body>
-<h1>Test</h1>
-</body>
+<html lang="en" [attr.data-bs-theme]="myTheme">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0"
+    />
+    <title>Document</title>
+  </head>
+  <header>
+    <app-header *ngIf="showHeader"></app-header>
+  </header>
+  <body>
+    <router-outlet></router-outlet>
+  </body>
 </html>

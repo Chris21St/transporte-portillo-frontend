@@ -1,0 +1,70 @@
+
+<section class="py-0 d-flex justify-content-center align-items-center pt-4" >
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <div class="bg-dark p-4 text-center rounded-3" data-bs-theme="ligth">
+          <h1 class="text-white m-0">{{'title.ul'|translate}}</h1>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="pt-4 py-0 d-flex justify-content-center align-items-center">
+  <div class="container" data-bs-theme="" >
+    <div class="row mb-4 align-items-center justify-content-between">
+      <div class="col-sm-6 col-xl-4 ">
+        <div class="align-items-center d-flex justify-content-start">
+          <button type="button" class="btn btn-primary" routerLink="/useradmin">{{'header.admuser'|translate}}</button>
+        </div>
+      </div>
+      <div class="col-sm-6 col-xl-4 d-flex justify-content-end">
+        <div class="border rounded p-2">
+          <div class="input-group input-borderless" >
+            <input class="form-control me-1" type="text" placeholder="{{'search'|translate}}" [(ngModel)]="searchTerm" >
+            <button type="submit" class="btn btn-primary mb-0 rounded" (click)="search()"><span class="material-symbols-outlined">
+              search
+              </span></button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row g-4 justify-content-center" >
+
+      <div class="col-lg-10 col-xl-6 mb-4" *ngFor="let user of (searchResults?.length>0 ?searchResults : users)" >
+        <div class="card shadow p-2" [ngClass]="{'dark-theme': isDarkThemeOn, 'light-theme': !isDarkThemeOn}" >
+          <div class="row g-0">
+            <div class="col-4 d-flex align-items-center">
+              <img src="assets/01.jpg" class="rounded-3 img-fluid " alt="...">
+            </div>
+            <div class="col-md-8">
+              <div class="card-body">
+                <div class="d-sm-flex justify-content-sm-between mb-2 mb-sm-3">
+                  <div>
+                    <h5 class="card-title mb-0"><a [routerLink]="['/user-detail',user._id]" class="text-decoration-none"> {{user.name}} </a></h5>
+                  </div>
+                </div>
+                <div class="d-flex pb-2">
+                  <i class="material-symbols-outlined" >phone</i>
+                  <p class="small mb-2 mb-sm-0"> {{user.phone}} </p>
+                </div>
+                <div class="d-flex ">
+                  <i class="material-symbols-outlined" >email</i>
+                  <p class="text-truncate-2"> {{user.email}} </p>
+                </div>
+                <div class="d-flex">
+                  <i class="material-symbols-outlined">location_on</i>
+                  <p class="text-truncate-2 mb-3"> {{user.address}} </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+

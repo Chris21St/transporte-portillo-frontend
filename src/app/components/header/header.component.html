@@ -1,0 +1,33 @@
+<div class="nav-wrapper" >
+  <nav class="navbar" >
+    <img src="assets/logo.png" alt="Company Logo" style="margin-left: 20px !important;">
+    <div class="menu-toggle" id="mobile-menu" (click)="toggleMobileMenu()">
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
+    </div>
+    <ul class="nav align-items-center" [ngClass]="{'show':MobileActive}">
+      <li class="nav-item"><a href="#" class="nav-link"> {{'header.home'|translate}} </a></li>
+      <li class="nav-item">
+        <a  class="nav-link" routerLink="/userlist">{{'header.users'|translate}}</a>
+      </li>
+      <!-- <li class="nav-item"><a  routerLink="/useradmin">{{'header.admuser'|translate}}</a></li> -->
+      <li class="nav-item"><a routerLink="/driver-list" class="nav-link">{{'header.drivers'|translate}}</a></li>
+      <li class="nav-item"><a routerLink="/travel-list" class="nav-link">{{'header.travels'|translate}}</a></li>
+      <li class="nav-item"><a routerLink="/calculator" class="nav-link">Calculator</a></li>
+      <!-- <li class="nav-item"><a (click)="logout()" class="nav-link">LogOut</a></li>
+      <li class="nav-item">
+        <img src="assets/01.jpg" alt="Company Logo" class="rounded-circle" style="max-height: 40px;">
+      </li> -->
+      <li class="nav-item">
+        <img src="assets/dark.png" alt="Company Logo" class="img3" (click)="toggleDarkMode()">
+      </li>
+      <li class="nav-item">
+        <img src="assets/espa.avif" alt="Spanish" class="img2" (click)="useLanguage('es')">
+      </li>
+      <li class="nav-item">
+        <img src="assets/ingles.png" alt="English" class="img1" (click)="useLanguage('en')">
+      </li>
+    </ul>
+  </nav>
+</div>

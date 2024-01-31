@@ -1,0 +1,59 @@
+<div class="pt-5">
+  <div class="row g-2 justify-content-center" >
+    <div class="col-9" >
+      <div class="card bg-transparent border rounded-3 h-100">
+        <div class="card-header border-bottom" [ngClass]="{'dark-theme': isDarkThemeOn, 'light-theme': !isDarkThemeOn}">
+          <div class="d-flex justify-content-between aling-items-center">
+            <h5 class="card-header-title mb-0" >{{'usercard.peinfo'|translate}}</h5>
+            <!-- <div>
+              <button class="btn btn-primary me-2">Edit</button>
+              <button class="btn btn-danger">Delete</button>
+            </div> -->
+          </div>
+        </div>
+          <div class="card-body" >
+          <div class="row">
+            <div class="col-md-6">
+              <ul class="list-group list-group-flush">
+
+                <li class="list-group-item" [ngClass]="{'dark-theme': isDarkThemeOn, 'light-theme': !isDarkThemeOn}">
+                  <span>{{'usercard.fn'|translate}}: </span>
+                  <span class="h6 mb-0"> {{user.name}} </span>
+                </li>
+
+                <li class="list-group-item" [ngClass]="{'dark-theme': isDarkThemeOn, 'light-theme': !isDarkThemeOn}">
+                  <span>#{{'usercard.user'|translate}}: </span>
+                  <span class="h6 mb-0"> {{user.code}} </span>
+                </li>
+
+                <li class="list-group-item" [ngClass]="{'dark-theme': isDarkThemeOn, 'light-theme': !isDarkThemeOn}">
+                  <span>{{'usercard.mn'|translate}}: </span>
+                  <span class="h6 mb-0"> {{user.phone}} </span>
+                </li>
+                <li class="list-group-item" [ngClass]="{'dark-theme': isDarkThemeOn, 'light-theme': !isDarkThemeOn}">
+                  <span>{{'usercard.email'|translate}}: </span>
+                  <span class="h6 mb-0"> {{user.email}} </span>
+                </li>
+              </ul>
+            </div>
+
+            <div class="col-md-6">
+              <ul class="list-group list-group-flush">
+
+                <li class="list-group-item" [ngClass]="{'dark-theme': isDarkThemeOn, 'light-theme': !isDarkThemeOn}">
+                  <span>{{'usercard.address'|translate}}: </span>
+                  <span class="h6 mb-0"> {{user.address}} </span>
+                </li>
+
+                <li class="list-group-item" [ngClass]="{'dark-theme': isDarkThemeOn, 'light-theme': !isDarkThemeOn}">
+                  <span>{{'usercard.payments'|translate}}: </span>
+                  <span class="h6 mb-0">$20 01/07/2023</span>
+                </li>
+
+              </ul>
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
